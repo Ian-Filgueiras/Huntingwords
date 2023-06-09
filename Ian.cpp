@@ -32,16 +32,16 @@ void fillInBoard(char board[GRID_SIZE][GRID_SIZE], const char* word) {
             rowGeneration + directions[randomDirection][0] * (wordLen - 1) >= 0 && rowGeneration + directions[randomDirection][0] * (wordLen - 1) < GRID_SIZE) {
 
             // Verifica se a posição está livre na board
-            int posicao_livre = 1;
+            int freePosition = 1;
             for (int i = 0; i < wordLen; i++) {
                 if (board[rowGeneration + directions[randomDirection][0] * i][colGeneration + directions[randomDirection][1] * i] != ' ') {
-                    posicao_livre = 0;
+                    freePosition = 0;
                     break;
                 }
             }
 
             // Se a posição estiver livre, preenche a palavra na board
-            if (posicao_livre) {
+            if (freePosition) {
                 for (int i = 0; i < wordLen; i++) {
                     board[rowGeneration + directions[randomDirection][0] * i][colGeneration + directions[randomDirection][1] * i] = word[i];
                 }
